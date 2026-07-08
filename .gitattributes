@@ -1,0 +1,16 @@
+# デフォルトの挙動として、改行コードを自動的に正規化する
+* text=auto
+
+# シェルスクリプトは必ずLF
+*.sh text eol=lf
+
+# ソースコードや設定ファイルも LF を強制する
+*.js text eol=lf
+*.json text eol=lf
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf
+
+# 動画ファイルはバイナリとして扱い、改行コードの変換などを無効化する
+*.mkv binary
+*.mp4 binary
+*.flv binary
