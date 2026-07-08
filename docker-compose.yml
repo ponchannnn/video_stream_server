@@ -1,0 +1,11 @@
+services:
+  rtmp-server:
+    build: .
+    container_name: rtmp-record-server
+    restart: always
+    ports:
+      - "1935:1935" # RTMP用ポート
+    volumes:
+      - ./recordings:/app/recordings
+    environment:
+      - TZ=Asia/Tokyo

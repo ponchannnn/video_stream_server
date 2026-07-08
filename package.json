@@ -1,0 +1,12 @@
+{
+  "name": "docker-rtmp-server",
+  "version": "1.0.0",
+  "description": "RTMP Server with auto MKV recording",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "node-media-server": "^2.7.0"
+  }
+}
