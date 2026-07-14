@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>録画サーバー ダッシュボード</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>録画サーバー ダッシュボード</h1>
+    <div class="app-header__meta">
+      <span id="conn-indicator" class="badge badge--unknown">接続確認中...</span>
+      <span id="clock"></span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card card--preview">
+      <h2>ライブプレビュー</h2>
+      <div class="preview">
+        <video id="live-video" muted autoplay playsinline></video>
+        <p id="preview-message" class="preview__message">配信を待機中です...</p>
+      </div>
+      <dl id="stream-info" class="info-list"></dl>
+    </section>
+
+    <section class="card">
+      <h2>ストレージ</h2>
+      <div class="storage">
+        <div class="storage__bar">
+          <div id="storage-bar-fill" class="storage__bar-fill"></div>
+        </div>
+        <dl class="info-list">
+          <div><dt>録画フォルダ使用量</dt><dd id="storage-used">-</dd></div>
+          <div><dt>ディスク空き容量</dt><dd id="storage-free">-</dd></div>
+          <div><dt>録画ファイル数</dt><dd id="storage-count">-</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="card card--wide">
+      <h2>録画ファイル一覧</h2>
+      <table class="file-table">
+        <thead>
+          <tr>
+            <th>ファイル名</th>
+            <th>サイズ</th>
+            <th>更新日時</th>
+          </tr>
+        </thead>
+        <tbody id="file-table-body">
+          <tr><td colspan="3" class="file-table__empty">読み込み中...</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/flv.js@1.6.2/dist/flv.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

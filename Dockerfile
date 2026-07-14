@@ -12,6 +12,8 @@ RUN npm install
 
 # 実行コードのコピー
 COPY server.js ./
+COPY dashboard ./dashboard
+COPY public ./public
 
 # コンテナ起動時にサーバーを実行
 CMD ["node", "server.js"]

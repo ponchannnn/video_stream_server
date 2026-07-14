@@ -5,6 +5,8 @@ services:
     restart: always
     ports:
       - "1935:1935" # RTMP用ポート
+      - "8000:8000" # HTTP-FLVライブプレビュー用ポート
+      - "8888:8888" # ダッシュボードWeb UI用ポート
     volumes:
       - ./recordings:/app/recordings
     environment:
